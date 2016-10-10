@@ -194,6 +194,23 @@
 					{/if}
 				{/foreach}
 
+                                {* Article Authors *}
+                                {* if $article->getAuthorString() && $article->getAuthorString() != $currentJournal->getName() *}
+                                <div class="panel panel-default author">
+                                        <div class="panel-heading">
+                                                {translate key="article.authors"}
+                                        </div>
+                                        <div class="panel-body">
+                                                {foreach from=$article->getAuthors() key=i item=link_author}
+                                                        {* if $link_author != $currentJournal->getName() *}
+                                                                <p><a href="{url page="search" op="search"}?authors={$link_author->getFirstName()|escape|urlencode}{if $link_author->getMiddleName()}+{$link_author->getMiddleName()|escape|urlencode}{/if}+{$link_author->getLastName()|escape|urlencode}">{$link_author->getFirstName()|escape|urlencode}{if $link_author->getMiddleName()} {$link_author->getMiddleName()|escape|urlencode}{/if} {$link_author->getLastName()|escape}</a></p>
+                                                        {* /if *}
+                                                {/foreach}
+
+                                        </div>
+                                </div>
+                                {* /if *}
+
 				{* Article Subject *}
 				{if $article->getLocalizedSubject()}
 					<div class="panel panel-default subject">
@@ -201,7 +218,15 @@
 							{translate key="article.subject"}
 						</div>
 						<div class="panel-body">
-							{$article->getLocalizedSubject()|escape}
+							{* $article->getLocalizedSubject()|escape *}
+                                                        {if $article->getSubject(null)}{foreach from=$article->getSubject(null) key=metaLocale item=metaValue}
+        {foreach from=$metaValue|explode:"; " item=scSubject}
+                {if $scSubject}
+                        <p><a href="{url page="search" op="search"}?subject={$scSubject|escape|urlencode}">{$scSubject}</a></p>
+                {/if}
+        {/foreach}
+{/foreach}{/if}
+							
 						</div>
 					</div>
 				{/if}
