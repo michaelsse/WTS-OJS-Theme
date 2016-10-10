@@ -1,6 +1,6 @@
-# Bootstrap3 for OJS 3.0
+# Western Theological Seminary Theme for OJS 3.0
 
-A community-built theme for OJS 3.0 that implements Bootstrap 3 components.
+Based on Bootstrap3 for OJS 3.0: A community-built theme for OJS 3.0 that implements Bootstrap 3 components.
 
 ## Installation
 
@@ -33,3 +33,4 @@ Thanks to everyone who has contributed to this theme:
 - Ted Roeder ([Cold Spring Harbor Laboratory](http://www.cshl.edu/))
 - William Alejandro Ortiz Porras, @wortizBiteca ([Biteca Ltda, Columbia](http://www.biteca.com/))
 - Ramón Martins Sodoma da Fonseca (IBCIT, Brazil)
+- Stephen E. Michaels (Western Theological Seminary, Holland, Michigan, USA)
