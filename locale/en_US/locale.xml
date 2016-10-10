@@ -23,7 +23,7 @@
 	<message key="plugins.themes.westernsem.article.details">Article Details</message>
 	<message key="plugins.themes.westernsem.options.bootstrapTheme.label">Bootstrap Theme</message>
 	<message key="plugins.themes.westernsem.options.bootstrapTheme.description">Select one of these open-source Bootstrap themes which change the colors aand typography of your website.</message>
-	<message key="plugins.themes.westernsem.options.bootstrapTheme.westernsem">Default Bootstrap Theme</message>
+	<message key="plugins.themes.westernsem.options.bootstrapTheme.bootstrap">Default Bootstrap Theme</message>
 	<message key="plugins.themes.westernsem.options.bootstrapTheme.cerulean">Cerulean</message>
 	<message key="plugins.themes.westernsem.options.bootstrapTheme.cleanblog">Clean Blog</message>
 	<message key="plugins.themes.westernsem.options.bootstrapTheme.cosmo">Cosmo</message>

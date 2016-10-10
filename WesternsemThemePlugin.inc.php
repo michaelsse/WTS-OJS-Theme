@@ -27,7 +27,7 @@ class WesternsemThemePlugin extends ThemePlugin {
 			'label' => 'plugins.themes.westernsem.options.bootstrapTheme.label',
 			'description' => 'plugins.themes.westernsem.options.bootstrapTheme.description',
 			'options' => array(
-				'westernsem' => 'plugins.themes.westernsem.options.bootstrapTheme.westernsem',
+				'bootstrap' =>  'plugins.themes.westernsem.options.bootstrapTheme.bootstrap',
 				'cerulean'   => 'plugins.themes.westernsem.options.bootstrapTheme.cerulean',
 				'cleanblog'  => 'plugins.themes.westernsem.options.bootstrapTheme.cleanblog',
 				'cosmo'      => 'plugins.themes.westernsem.options.bootstrapTheme.cosmo',
