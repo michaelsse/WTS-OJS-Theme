@@ -14,7 +14,7 @@
 <version>
 	<application>westernsem</application>
 	<type>plugins.themes</type>
-	<release>1.0.0.0</release>
+	<release>1.0.0.1</release>
 	<date>2016-09-01</date>
 	<lazy-load>0</lazy-load>
 	<class>WesternsemThemePlugin</class>

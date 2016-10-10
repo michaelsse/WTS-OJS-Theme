@@ -32,7 +32,7 @@
 		<section class="article-sidebar col-md-4">
 
 			{* Screen-reader heading for easier navigation jumps *}
-			<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.sidebar"}</h2>
+			<h2 class="sr-only">{translate key="plugins.themes.westernsem.article.sidebar"}</h2>
 
 			{* Article/Issue cover image *}
 			{if $article->getCoverImage() || $issue->getCoverImage()}
@@ -94,7 +94,7 @@
 			<section class="article-main">
 
 				{* Screen-reader heading for easier navigation jumps *}
-				<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.main"}</h2>
+				<h2 class="sr-only">{translate key="plugins.themes.westernsem.article.main"}</h2>
 
 				{if $article->getAuthors()}
 					<div class="authors">
@@ -137,7 +137,7 @@
 			<section class="article-more-details">
 
 				{* Screen-reader heading for easier navigation jumps *}
-				<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.details"}</h2>
+				<h2 class="sr-only">{translate key="plugins.themes.westernsem.article.details"}</h2>
 
 				{* Citation formats *}
 				{if $citationPlugins|@count}
