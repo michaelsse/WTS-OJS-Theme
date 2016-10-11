@@ -78,6 +78,15 @@
 						<input class="form-control" type="text" for="authors" name="authors" value="{$authors}">
 					</div>
 				</div>
+
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                                <label for="subjects">
+                                                        {translate key="search.subject"}
+                                                </label>
+                                                <input class="form-control" type="text" for="subject" name="subject" value="{$subject}">
+                                        </div>
+                                </div>
 			</div>
 		</fieldset>
 

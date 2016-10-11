@@ -1,7 +1,8 @@
 <div data-reveal id="sidr" class="sidr left">
   <h1>Western Theological Seminary</h1>
   <ul>
-    <li><a href="http://www.westernsem.edu/"><i class="el-icon-home"></i> Home</a></li>
+    <li><a onclick="$.sidr('close','sidr')" href="#"><i class="el-icon-lines"></i> Close Menu</a></li>
+    <li><a href="/"><i class="el-icon-home"></i> Home</a></li>
     <li><a href="http://www.westernsem.edu/about"><i class="el-icon-flag"></i> Our Calling</a></li>
     <li><a href="http://www.westernsem.edu/academics"><i class="el-icon-book"></i> Academics</a></li>
     <li><a href="http://www.westernsem.edu/community"><i class="el-icon-group"></i> Community</a></li>
