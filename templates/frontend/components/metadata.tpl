@@ -19,14 +19,14 @@
 <div class="panel-body metadata" style="display:none;">
 
 <table class="listing table table-striped table-responsive table-bordered">
+
 	<tr valign="top">
-		<th class="heading" width="25%" colspan="2">{translate key="rt.metadata.dublinCore"}</th>
+		<th class="heading" width="25%">{translate key="rt.metadata.dublinCore"}</th>
 		<th class="heading" width="25%">{translate key="rt.metadata.pkpItem"}</th>
 		<th class="heading" width="50%">{translate key="rt.metadata.forThisDocument"}</th>
 	</tr>
 
 <tr valign="top">
-	<td>1.</td>
 	<td>{translate key="rt.metadata.dublinCore.title"}</td>
 	<td>{translate key="rt.metadata.pkp.title"}</td>
 	<td>{$article->getLocalizedTitle()|strip_unsafe_html}</td>
@@ -34,18 +34,16 @@
 {foreach from=$article->getAuthors() item=author}
 
 <tr valign="top">
-	<td>2.</td>
 	<td width="25%">{translate key="rt.metadata.dublinCore.primaryAuthor"}</td>
 	<td>{translate key="rt.metadata.pkp.primaryAuthor"}</td>
 	<td>
-		{$author->getFullName()|escape}{if $author->getLocalizedAffiliation()}; {$author->getLocalizedAffiliation()|escape}{/if}{if $author->getCountry()}; {$author->getCountryLocalized()|escape}{/if}
+		{$author->getFullName()|escape}{if $author->getLocalizedAffiliation()}; {$author->getLocalizedAffiliation()|escape}{/if}{if $author->getCountry()} ({$author->getCountryLocalized()|escape}){/if}
 		</td>
 </tr>
 {/foreach}
 {if $article->getLocalizedDiscipline()}
 
 <tr valign="top">
-	<td>3.</td>
 	<td>{translate key="rt.metadata.dublinCore.subject"}</td>
 	<td>{translate key="rt.metadata.pkp.discipline"}</td>
 	<td>{$article->getLocalizedDiscipline()|escape}</td>
@@ -55,23 +53,19 @@
 {if $article->getLocalizedSubject()}
 
 <tr valign="top">
-	<td>3.</td>
 	<td>{translate key="rt.metadata.dublinCore.subject"}</td>
 	<td>{translate key="rt.metadata.pkp.subject"}</td>
 	<td>{$article->getLocalizedSubject()|escape}</td>
 </tr>
 {/if}
 
-<tr><td colspan="4" class="separator">&nbsp;</td></tr>
 <tr valign="top">
-	<td>4.</td>
 	<td>{translate key="rt.metadata.dublinCore.description"}</td>
 	<td>{translate key="rt.metadata.pkp.abstract"}</td>
 	<td>{if $article->getLocalizedAbstract()}{$article->getLocalizedAbstract()|strip_unsafe_html|nl2br}{/if}</td>
 </tr>
 
 <tr valign="top">
-	<td>5.</td>
 	<td>{translate key="rt.metadata.dublinCore.publisher"}</td>
 	<td>{translate key="rt.metadata.pkp.publisher"}</td>
 	{assign var=pubUrl value=$currentJournal->getSetting('publisherUrl')|escape}
@@ -80,7 +74,6 @@
 {if $article->getLocalizedSponsor()}
 
 <tr valign="top">
-	<td>6.</td>
 	<td>{translate key="rt.metadata.dublinCore.contributor"}</td>
 	<td>{translate key="rt.metadata.pkp.sponsors"}</td>
 	<td>{$article->getLocalizedSponsor()|escape}</td>
@@ -88,7 +81,6 @@
 {/if}
 
 <tr valign="top">
-	<td>7.</td>
 	<td>{translate key="rt.metadata.dublinCore.date"}</td>
 	<td>{translate key="rt.metadata.pkp.date"}</td>
 	<td>
@@ -105,7 +97,6 @@
 </tr>
 
 <tr valign="top">
-	<td>8.</td>
 	<td>{translate key="rt.metadata.dublinCore.type"}</td>
 	<td>{translate key="rt.metadata.pkp.genre"}</td>
 	<td>{if $section && $section->getLocalizedIdentifyType()}{$section->getLocalizedIdentifyType()|escape}{else}{translate key="rt.metadata.pkp.peerReviewed"}{/if}</td>
@@ -113,7 +104,6 @@
 {if $article->getLocalizedType()}
 
 <tr valign="top">
-	<td>8.</td>
 	<td>{translate key="rt.metadata.dublinCore.type"}</td>
 	<td>{translate key="rt.metadata.pkp.type"}</td>
 	<td>{$article->getLocalizedType()|escape}</td>
@@ -121,7 +111,6 @@
 {/if}
 
 <tr valign="top">
-	<td>9.</td>
 	<td>{translate key="rt.metadata.dublinCore.format"}</td>
 	<td>{translate key="rt.metadata.pkp.format"}</td>
 	<td>
@@ -132,52 +121,34 @@
 </tr>
 
 <tr valign="top">
-        <td>10.</td>
-        <td>{translate key="rt.metadata.dublinCore.identifier"}</td>
-        <td>{translate key="rt.metadata.pkp.uri"}</td>
-        <td><a target="_new" href="{url page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">{url op="view" path=$galley->getBestGalleyId()}</a></td>
+	<td>{translate key="rt.metadata.dublinCore.identifier"}</td>
+	<td>{translate key="rt.metadata.pkp.uri"}</td>
+	<td><a target="_new" href="{url page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">{url op="view" path=$galley->getBestGalleyId()}</a></td>
 </tr>
 
 <tr valign="top">
-	<td>11.</td>
 	<td>{translate key="rt.metadata.dublinCore.source"}</td>
 	<td>{translate key="rt.metadata.pkp.source"}</td>
-	<td>{$currentJournal()|escape}{if $issue}; {$issue->getIssueIdentification()|strip_unsafe_html|nl2br}{/if}</td>
+	<td>{$journal->getLocalizedName()}{if $issue}; {$issue->getIssueIdentification()|strip_unsafe_html|nl2br}{/if}</td>
 </tr>
 
 <tr valign="top">
-	<td>12.</td>
 	<td>{translate key="rt.metadata.dublinCore.language"}</td>
 	<td>{translate key="rt.metadata.pkp.language"}</td>
 	<td>{$article->getLanguage()|escape}</td>
 </tr>
 
-{* if $journalRt->getSupplementaryFiles()}
+{* if $article->getLocalizedCoverageGeo() || $article->getLocalizedCoverageChron() || $article->getLocalizedCoverageSample()}
 <tr valign="top">
-	<td>13.</td>
-	<td>{translate key="rt.metadata.dublinCore.relation"}</td>
-	<td>{translate key="rt.metadata.pkp.suppFiles"}</td>
-	<td>
-		{foreach from=$article->getSuppFiles() item=suppFile}
-			<a href="{url page="article" op="downloadSuppFile" path=$articleId|to_array:$suppFile->getBestSuppFileId($currentJournal)}">{$suppFile->getSuppFileTitle()|escape}</a> ({$suppFile->getNiceFileSize()})<br />
-		{/foreach}
-	</td>
-</tr>
-
-{/if *}
-{if $article->getLocalizedCoverageGeo() || $article->getLocalizedCoverageChron() || $article->getLocalizedCoverageSample()}
-<tr valign="top">
-	<td>14.</td>
 	<td>{translate key="rt.metadata.dublinCore.coverage"}</td>
 	<td>{translate key="rt.metadata.pkp.coverage"}</td>
 	<td>
 		{if $article->getLocalizedCoverageGeo()}{$article->getLocalizedCoverageGeo()|escape}{assign var=notFirstItem value=1}{/if}{if $article->getLocalizedCoverageChron()}{if $notFirstItem}, <br/>{/if}{$article->getLocalizedCoverageChron()|escape}{assign var=notFirstItem value=1}{/if}{if $article->getLocalizedCoverageSample()}{if $notFirstItem}, <br/>{/if}{$article->getLocalizedCoverageSample()|escape}{assign var=notFirstItem value=1}{/if}
 	</td>
 </tr>
-{/if}
+{/if *}
 
 <tr valign="top">
-	<td>15.</td>
 	<td>{translate key="rt.metadata.dublinCore.rights"}</td>
 	<td>{translate key="rt.metadata.pkp.copyright"}</td>
 	<td>
