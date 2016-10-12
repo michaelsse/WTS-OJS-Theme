@@ -255,6 +255,8 @@
 					</div>
 				{/if}
 
+                                {include file="frontend/components/metadata.tpl"}
+
 				{* Licensing info *}
 				{if $copyright || $licenseUrl}
 					<div class="panel panel-default copyright">

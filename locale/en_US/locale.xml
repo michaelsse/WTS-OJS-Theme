@@ -13,7 +13,7 @@
 
 <locale name="en_US" full_name="U.S. English">
 	<message key="plugins.themes.westernsem.name">Western Theological Seminary Theme</message>
-	<message key="plugins.themes.westernsem.description">A starter Boostrap 3 theme for the reader frontend.</message>
+	<message key="plugins.themes.westernsem.description">A Boostrap 3 theme for Western Theological Seminary.</message>
 	<message key="plugins.themes.westernsem.accessible_menu.label">Quick jump to page content</message>
 	<message key="plugins.themes.westernsem.accessible_menu.main_navigation">Main Navigation</message>
 	<message key="plugins.themes.westernsem.accessible_menu.main_content">Main Content</message>
