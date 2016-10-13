@@ -10,7 +10,8 @@
  *}
 <div class="panel panel-default finding-references">
 <div class="panel-heading">
-    <a onclick="$('.panel-body.finding-references').toggle();">{translate key="rt.findingReferences}</a>
+    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+    <a onclick="$('.panel-body.finding-references').toggle();$('.finding-references .glyphicon').toggleClass('glyphicon-menu-down');$('.finding-references .glyphicon').toggleClass('glyphicon-menu-right');">{translate key="rt.findingReferences}</a>
 </div>
 <div class="panel-body finding-references" style="display:none;">
 <script type="text/javascript">
@@ -27,12 +28,12 @@ function invokeWorldcat() {
 function invokeATLAR() {
         var atlaReligionForm = document.getElementById('atlaReligion');
 
-        atlaReligion.bquery.value = "(TI+((" +document.getElementById('inputForm').title.value + "))+AND+(AU+(" + document.getElementById('inputForm').author.value + "))";
+        atlaReligion.bquery.value = "(TI+(" +document.getElementById('inputForm').title.value + "))+AND+(AU+(" + document.getElementById('inputForm').author.value + "))";
         atlaReligionForm.submit();
 }
 
 function invokeGoogleScholar() {
-        var googleScholarForm = document.getElementById('atla-religion');
+        var googleScholarForm = document.getElementById('googleScholar');
 
         googleScholarForm.as_q.value = document.getElementById('inputForm').title.value;
         googleScholarForm.as_sauthors.value = document.getElementById('inputForm').author.value;
@@ -111,10 +112,10 @@ function invokeWLA() {
                 <td><button value="{translate key="common.search"}" type="button" onclick="invokeGoogleScholar()" class="btn btn-primary">{translate key="common.search"}</button></td>
                 <td>{translate key="rt.findingReferences.googleScholar"}</td>
         </tr>
-        <tr valign="top">
+        <!--tr valign="top">
                 <td><button value="{translate key="common.search"}" type="button" onclick="invokeWLA()" class="btn btn-primary">{translate key="common.search"}</button></td>
                 <td>{translate key="rt.findingReferences.windowsLiveAcademic"}</td>
-        </tr>
+        </tr-->
 </table>
 
 </div>

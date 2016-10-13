@@ -10,7 +10,10 @@
  *}
 
 <div class="panel panel-default metadata">
-<div class="panel-heading"><a onclick="$('.panel-body.metadata').toggle();">{translate key="article.metadata"}</a></div>
+<div class="panel-heading">
+        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    <a onclick="$('.panel-body.metadata').toggle();$('.metadata .glyphicon').toggleClass('glyphicon-menu-down');$('.metadata .glyphicon').toggleClass('glyphicon-menu-right');">{translate key="article.metadata"}</a>
+</div>
 
 <div class="panel-body metadata" style="display:none;">
 
