@@ -99,6 +99,7 @@
 				{if $article->getAuthors()}
 					<div class="authors">
 						{foreach from=$article->getAuthors() item=author}
+                                                    {if $article->getAuthorString() && $article->getAuthorString() != $currentJournal->getLocalizedName()}
 							<strong>{$author->getFullName()|escape}</strong>
 							{if $author->getLocalizedAffiliation()}
 								<div class="article-author-affilitation">
@@ -113,6 +114,7 @@
 									</a>
 								</span>
 							{/if}
+                                                    {/if}
 						{/foreach}
 					</div>
 				{/if}
@@ -195,21 +197,21 @@
 				{/foreach}
 
                                 {* Article Authors *}
-                                {* if $article->getAuthorString() && $article->getAuthorString() != $currentJournal->getName() *}
+                                {if $article->getAuthorString() && $article->getAuthorString() != $currentJournal->getLocalizedName()}
                                 <div class="panel panel-default author">
                                         <div class="panel-heading">
                                                 {translate key="article.authors"}
                                         </div>
                                         <div class="panel-body">
                                                 {foreach from=$article->getAuthors() key=i item=link_author}
-                                                        {* if $link_author != $currentJournal->getName() *}
+                                                        {if $link_author != $currentJournal->getLocalizedName()}
                                                                 <p><a href="{url page="search" op="search"}?authors={$link_author->getFirstName()|escape|urlencode}{if $link_author->getMiddleName()}+{$link_author->getMiddleName()|escape|urlencode}{/if}+{$link_author->getLastName()|escape|urlencode}">{$link_author->getFirstName()|escape|urlencode}{if $link_author->getMiddleName()} {$link_author->getMiddleName()|escape|urlencode}{/if} {$link_author->getLastName()|escape}</a></p>
-                                                        {* /if *}
+                                                        {/if}
                                                 {/foreach}
 
                                         </div>
                                 </div>
-                                {* /if *}
+                                {/if}
 
 				{* Article Subject *}
 				{if $article->getLocalizedSubject()}
@@ -254,6 +256,10 @@
 						</div>
 					</div>
 				{/if}
+
+				{include file="frontend/components/findingReferences.tpl"}
+
+                                {include file="frontend/components/metadata.tpl"}
 
 				{* Licensing info *}
 				{if $copyright || $licenseUrl}
