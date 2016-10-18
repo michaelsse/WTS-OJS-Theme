@@ -17,8 +17,8 @@ $(document).ready(function() {
 });
 {/literal}
 </script> 
-<script src="/themes/2014_Website_Theme/bower_components/foundation/js/foundation.min.js"></script>
-<script src="/themes/2014_Website_Theme/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+<script src="/themes/node_modules/foundation/js/foundation/foundation.js"></script>
+<script src="/themes/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
 <script src="/themes/2014_Website_Theme/js/modernizr.js"></script>
-<script src="/themes/2014_Website_Theme/js/sidr-package-1.2.1/jquery.sidr.min.js"></script>
+<script src="/themes/node_modules/sidr/dist/jquery.sidr.min.js"></script>
 <script src="/themes/2014_Website_Theme/js/app.js"></script>
