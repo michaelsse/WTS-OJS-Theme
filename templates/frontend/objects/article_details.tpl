@@ -35,13 +35,13 @@
 			<h2 class="sr-only">{translate key="plugins.themes.westernsem.article.sidebar"}</h2>
 
 			{* Article/Issue cover image *}
-			{if $article->getCoverImage() || $issue->getCoverImage()}
+			{if $article->getLocalizedCoverImage() || $issue->getLocalizedCoverImage()}
 				<div class="cover-image">
-					{if $article->getCoverImage()}
-						<img class="img-responsive" src="{$publicFilesDir}/{$article->getCoverImage()|escape}"{if $article->getCoverImageAltText()} alt="{$article->getCoverImageAltText()|escape}"{/if}>
+					{if $article->getLocalizedCoverImage()}
+						<img class="img-responsive" src="{$publicFilesDir}/{$article->getLocalizedCoverImage()|escape}"{if $article->getLocalizedCoverImageAltText()} alt="{$article->getLocalizedCoverImageAltText()|escape}"{/if}>
 					{else}
 						<a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
-							<img class="img-responsive" src="{$publicFilesDir}/{$issue->getCoverImage()|escape}"{if $issue->getCoverImageAltText()} alt="{$issue->getCoverImageAltText()|escape}"{/if}>
+							<img class="img-responsive" src="{$publicFilesDir}/{$issue->getLocalizedCoverImage()|escape}"{if $issue->getCoverImageAltText()} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
 						</a>
 					{/if}
 				</div>
@@ -137,6 +137,10 @@
 			</section><!-- .article-main -->
 
 			<section class="article-more-details">
+
+ 				{* Altmetrics  *}
+					<div data-badge-details="right" data-badge-type="medium-donut" data-uri="{url page="article" op="view" path=$article->getBestArticleId()}" data-hide-no-mentions="true" class="altmetric-embed">
+					</div>
 
 				{* Screen-reader heading for easier navigation jumps *}
 				<h2 class="sr-only">{translate key="plugins.themes.westernsem.article.details"}</h2>

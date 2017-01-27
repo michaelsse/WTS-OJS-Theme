@@ -29,5 +29,6 @@
 	{call_hook name="Templates::Article::Footer::PageFooter"}
 
 </div><!-- .page -->
+<script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 
 {include file="frontend/components/footer.tpl"}

@@ -7,7 +7,7 @@
         <meta itemprop="name" lang="{$currentLocale|String_substr:0:2|escape}" xml:lang="{$currentLocale|String_substr:0:2|escape}" content="{$sc_author|escape}" />
         </span>
         {else}
-        <span itemprop="contributor" itemscope itemtype="http//schema.org/Person">
+        <span itemprop="contributor" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" lang="{$currentLocale|String_substr:0:2|escape}" xml:lang="{$currentLocale|String_substr:0:2|escape}" content="{$sc_author|escape}" />
         </span>
         {/if}

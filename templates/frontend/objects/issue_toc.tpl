@@ -25,7 +25,7 @@
 	<div class="heading">
 
 		{* Issue cover image and description*}
-		{assign var=issueCover value=$issue->getCoverImage()}
+		{assign var=issueCover value=$issue->getLocalizedCoverImage()}
 		{if $issueCover}
 			<div class="thumbnail">
 				<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
