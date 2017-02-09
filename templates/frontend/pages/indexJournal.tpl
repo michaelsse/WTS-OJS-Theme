@@ -26,7 +26,8 @@
 
 	{if $homepageImage}
 		<div class="homepage-image">
-			<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
+			<img class="img-responsive lazy" data-original="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
+			<noscript><img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}"></noscript>
 		</div>
 	{/if}
 

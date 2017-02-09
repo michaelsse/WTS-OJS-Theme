@@ -108,7 +108,7 @@ function gaOptout() {
 </footer>
 
   <div id="google-map-modal" class="reveal-modal" data-reveal="">
-  <iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2928.0983166821484!2d-86.10547878423887!3d42.78627137916048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819f2a519290a71%3A0x6f2932d647053096!2sBeardslee+Library!5e0!3m2!1sen!2sus!4v1467730993564" style="border:0"></iframe>
+    <iframe style="border:0;height:75vh;" frameborder="0" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyATKAED7kmXZcAPAUyofKVB5FYU9s6EEEQ&center=42.7862,-86.1026&zoom=18&q=Beardslee%20Library"></iframe>
   </div>
 
 {include file="frontend/components/WTSmodal-reveal.tpl"}

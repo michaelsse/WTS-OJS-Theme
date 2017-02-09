@@ -4,8 +4,8 @@
       <ul>
         <li class="mobile-menu">
           <a id="mobile-menu" href="#sidr">
-            <i class="el-icon-lines">
-            </i>
+            <i class="el-icon-lines"></i>
+            <span class="sr-only">Mobile Menu</span>
           </a>
         </li>
         <li class="student_portal address">
@@ -30,8 +30,10 @@
   <div class="primary navbar container-fluid" id="wts-menu" style="margin: -50px 0 0 0;max-width:100%;">
     <div role="navigation" class="navbar">
       <h1 class="logo navbar-header container-fluid">
-        <a alt="Western Theological Seminary" href="http://www.westernsem.edu/">
-          <img width="300" height="100" src="/themes/2014_Website_Theme/images/header/logo.png">
+        <a href="http://www.westernsem.edu/">
+          <img width="300" height="100" data-original="/themes/2014_Website_Theme/images/header/logo.png" class="lazy" alt="Western Theological Seminary">
+          <noscript><img width="300" height="100" src="/themes/2014_Website_Theme/images/header/logo.png" alt="Western Theological Seminary"></noscript>
+          <span class="sr-only">Western Theological Seminary</span>
         </a>
       </h1>
     </div>

@@ -25,11 +25,12 @@
 	<div class="heading">
 
 		{* Issue cover image and description*}
-		{assign var=issueCover value=$issue->getCoverImage()}
+		{assign var=issueCover value=$issue->getLocalizedCoverImage()}
 		{if $issueCover}
 			<div class="thumbnail">
 				<a class="cover" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
-					<img class="img-responsive" src="{$coverImagePath|escape}{$issueCover|escape}"{if $issue->getCoverImageAltText() != ''} alt="{$issue->getCoverImageAltText()|escape}"{/if}>
+					<img class="img-responsive lazy" data-original="{$coverImagePath|escape}{$issueCover|escape}"{if $issue->getCoverImageAltText() != ''} alt="{$issue->getCoverImageAltText()|escape}"{/if}>
+					<noscript><img class="img-responsive" data-original="{$coverImagePath|escape}{$issueCover|escape}"{if $issue->getCoverImageAltText() != ''} alt="{$issue->getCoverImageAltText()|escape}"{/if}></noscript>
 				</a>
 				{if $issue->hasDescription()}
 					<div class="description">
