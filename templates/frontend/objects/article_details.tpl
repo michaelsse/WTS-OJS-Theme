@@ -38,19 +38,12 @@
 			{if $article->getLocalizedCoverImage() || $issue->getLocalizedCoverImage()}
 				<div class="cover-image">
 					{if $article->getLocalizedCoverImage()}
-<<<<<<< HEAD
 						<img class="img-responsive lazy" data-original="{$publicFilesDir}/{$article->getLocalizedCoverImage()|escape}"{if $article->getLocalizedCoverImageAltText()} alt="{$article->getLocalizedCoverImageAltText()|escape}"{/if}>
 						<noscript><img class="img-responsive" src="{$publicFilesDir}/{$article->getLocalizedCoverImage()|escape}"{if $article->getLocalizedCoverImageAltText()} alt="{$article->getLocalizedCoverImageAltText()|escape}"{/if}></noscript>
 					{else}
 						<a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
 							<img class="img-responsive lazy" data-original="{$publicFilesDir}/{$issue->getLocalizedCoverImage()|escape}"{if $issue->getCoverImageAltText()} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
 							<noscript><img class="img-responsive" src="{$publicFilesDir}/{$issue->getLocalizedCoverImage()|escape}"{if $issue->getCoverImageAltText()} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}></noscript>
-=======
-						<img class="img-responsive" src="{$publicFilesDir}/{$article->getLocalizedCoverImage()|escape}"{if $article->getLocalizedCoverImageAltText()} alt="{$article->getLocalizedCoverImageAltText()|escape}"{/if}>
-					{else}
-						<a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
-							<img class="img-responsive" src="{$publicFilesDir}/{$issue->getLocalizedCoverImage()|escape}"{if $issue->getCoverImageAltText()} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
->>>>>>> origin/master
 						</a>
 					{/if}
 				</div>
