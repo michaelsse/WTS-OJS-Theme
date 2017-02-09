@@ -31,8 +31,12 @@
     <div role="navigation" class="navbar">
       <h1 class="logo navbar-header container-fluid">
         <a href="http://www.westernsem.edu/">
+<<<<<<< HEAD
           <img width="300" height="100" data-original="/themes/2014_Website_Theme/images/header/logo.png" class="lazy" alt="Western Theological Seminary">
           <noscript><img width="300" height="100" src="/themes/2014_Website_Theme/images/header/logo.png" alt="Western Theological Seminary"></noscript>
+=======
+          <img width="300" height="100" src="/themes/2014_Website_Theme/images/header/logo.png" alt="Western Theological Seminary">
+>>>>>>> origin/master
           <span class="sr-only">Western Theological Seminary</span>
         </a>
       </h1>
