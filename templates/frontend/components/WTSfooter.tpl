@@ -78,7 +78,7 @@
     </div>
     <div class="contact" style="margin:0 25px;font-size:13px;text-align:center;">
       <div>
-        <p><a rel="privacy-policy" href="http://www.westernsem.edu/privacy-policy/">Privacy policy</a></p>
+        <p><a rel="privacy-policy" href="http://www.westernsem.edu/privacy-policy">Privacy policy</a></p>
       </div>
       <div>
         <p><a href="javascript:gaOptout()">Opt-out of statistical data-gathering</a></p>

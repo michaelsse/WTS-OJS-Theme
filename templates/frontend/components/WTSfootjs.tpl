@@ -35,8 +35,9 @@ $(document).ready(function() {
 <script src="//cdn.jsdelivr.net/foundation/4.2.3/js/foundation.min.js" integrity="sha384-XtGGfvvTDRszUKHLbgK4Pcbb/tW46a3yX6khMPAPuHF7F9niXLRRkwRJMvdqr8/E" crossorigin="anonymous"></script>
 <script src="//cdn.jsdelivr.net/foundation/4.2.3/js/foundation/foundation.reveal.js" integrity="sha384-SC0gbKLN26Aj4iaNKvMbqrnOoU0MMVoUXDFbRexvt1A33KVEb2ViBYymkUhrRjV/" crossorigin="anonymous"></script>
 {* <script src="/themes/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
-<script src="/themes/node_modules/jquery-lazyload/jquery.lazyload.js"></script> *}
-<script src="/themes/2014_Website_Theme/js/modernizr.js"></script>
+<script src="/themes/node_modules/jquery-lazyload/jquery.lazyload.js"></script> 
+<script src="/themes/2014_Website_Theme/js/modernizr.js"></script> *}
+<script src="//cdn.jsdelivr.net/modernizr/2.7.2/modernizr.min.js" integrity="sha384-D0jzabEAsNXxjlAQm06FTcSbcnYMdUX8Gy7mt6x7SZhVqJtSu194MuOMknuAsOKk" crossorigin="anonymous"></script>
 <script src="/themes/ojs.js"></script>
 {* <script src="/themes/2014_Website_Theme/js/sidr-package-1.2.1/dist/jquery.sidr.js"></script> 
 <script src="/themes/2014_Website_Theme/js/app.js"></script> *}
