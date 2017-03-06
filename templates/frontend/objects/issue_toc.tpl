@@ -85,18 +85,34 @@
 	{* Full-issue galleys *}
 	{if $issueGalleys && ($hasAccess || $showGalleyLinks)}
 		<div class="galleys">
+			<ul hidden class="galleys_links hidden">
+				{foreach from=$issueGalleys item=galley}
+					<li>
+						{include file="frontend/objects/galley_link.tpl" parent=$issue}
+					</li>
+				{/foreach}
+			</ul>
 			<div class="page-header">
 				<h2>
 					<small>{translate key="issue.fullIssue"}</small>
 				</h2>
 			</div>
-			<div class="btn-group" role="group">
-				{foreach from=$issueGalleys item=galley}
-					{include file="frontend/objects/galley_link.tpl" parent=$issue}
-				{/foreach}
-			</div>
-		</div>
-	{/if}
+        {if !$publishedArticles && $issueGalleys && $galley->isPdfGalley() && $hasAccess}
+                <div class="pdfView">
+                        {foreach from=$issueGalleys item=galley}
+                        {if $galley->isPdfGalley()}
+                        <iframe src="{$baseUrl}/plugins/generic/pdfJsViewer/pdf.js/web/viewer.html?file={url page="issue" op="download" path=$issue->getId()|to_array:$galley->getBestGalleyId()|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" allowfullscreen webkitallowfullscreen></iframe>
+                        {/if}
+                        {/foreach}
+                </div>
+        {/if}
+                        <div class="btn-group" role="group">
+                                {foreach from=$issueGalleys item=galley}
+                                        {include file="frontend/objects/galley_link.tpl" parent=$issue}
+                                {/foreach}
+                        </div>
+                </div>
+        {/if}
 
 	{* Articles *}
 	<div class="sections">

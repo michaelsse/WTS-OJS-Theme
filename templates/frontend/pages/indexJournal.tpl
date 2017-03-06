@@ -56,7 +56,6 @@
 		</section>
 	{/if}
 
-
 	{* Latest issue *}
 	{if $issue}
 		<section class="current_issue">

@@ -226,8 +226,7 @@
 							{translate key="article.subject"}
 						</div>
 						<div class="panel-body">
-							{* $article->getLocalizedSubject()|escape *}
-                                                        {if $article->getSubject(null)}{foreach from=$article->getSubject(null) key=metaLocale item=metaValue}
+                                                        {if $article->getLocalizedSubject()}{foreach from=$article->getLocalizedSubject() key=metaLocale item=metaValue}
         {foreach from=$metaValue|explode:"; " item=scSubject}
                 {if $scSubject}
                         <p><a href="{url page="search" op="search"}?subject={$scSubject|escape|urlencode}">{$scSubject}</a></p>

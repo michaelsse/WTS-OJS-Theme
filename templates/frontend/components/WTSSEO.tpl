@@ -4,6 +4,9 @@
 	<meta name="geo.country" content="us">
 	<meta name="geo.region" content="US-MI">
 	<meta name="geo.placename" content="Holland">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 	<meta property="og:url" content="{$currentUrl}">
 {if $article}
 	<meta property="og:title" content="{$article->getLocalizedTitle()|strip_tags|escape}"/>

@@ -64,14 +64,15 @@
       <hr>
 
       <div class="address">
-        <div class="vcard">
-	  <span class="fn org">Bearslee Library</span>
-          <a class="url fn org" href="http://www.westernsem.edu">Western Theological Seminary</a>
-          <div class="adr">
-            <div class="street-address">101 East 13th Street</div>
-            <span class="locality">Holland</span>,
-            <span class="region">MI</span>
-            <span class="postal-code">49423</span>
+        <div class="vcard" itemtype="https://schema.org/EducationalOrganization" itemscope="itemscope">
+          <a data-reveal-id="google-map-modal" target="_blank" class="map" href="https://www.google.com/maps/place/Western+Theological+Seminary/@42.786267,-86.103265,17z/data=!4m6!1m3!3m2!1s0x8819f2a519290a71:0xb3328d95e7bfb43c!2sWestern+Theological+Seminary!3m1!1s0x8819f2a519290a71:0xb3328d95e7bfb43c">Map </a>
+	  <span itemprop="department" class="fn">Bearslee Library</span>
+          <a itemprop="name" class="url fn org" href="http://www.westernsem.edu">Western Theological Seminary</a>
+          <div itemtype="https://schema.org/PostalAddress" itemscope="itemscope" itemprop="address" class="adr">
+            <span itemprop="streetAddress" class="street-address">101 East 13th Street</span>
+            <span itemprop="addressLocality" class="locality">Holland</span>,
+            <span itemprop="addressRegion" class="region">MI</span>
+            <span itemprop="postalCode" class="postal-code">49423</span>
           </div>
         </div>
       </div>
@@ -86,7 +87,6 @@
 //<![CDATA[
 // Set to the same value as the web property used on the site
 var gaProperty = 'UA-34604541-5';
-
 // Disable tracking if the opt-out cookie exists.
 var disableStr = 'ga-disable-' + gaProperty;
 if (document.cookie.indexOf(disableStr + '=true') > -1) {

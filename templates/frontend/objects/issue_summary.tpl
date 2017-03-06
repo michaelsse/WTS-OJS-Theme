@@ -14,12 +14,13 @@
 	{* Retrieve separate entries for $issueTitle and $issueSeries *}
 	{assign var=issueTitle value=$issue->getLocalizedTitle()}
 	{assign var=issueSeries value=$issue->getIssueSeries()}
+	{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
 
 	{* Show cover image and use cover description *}
-	{if $issue->getCoverImage()}
+	{if $issueCover}
 		<div class="media-left">
-			<a class="cover" href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">
-				<img class="media-object" src="{$coverImagePath|escape}{$issue->getCoverImage()}">
+			<a class="cover" href="{url op="view" path=$issue->getBestIssueId()}">
+				<img class="media-object" src="{$issueCover|escape}"{if $issue->getLocalizedCoverImageAltText() != ''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
 			</a>
 		</div>
 	{/if}
@@ -41,7 +42,7 @@
 			{/if}
 		</h2>
 		<div class="description">
-			{$issueDescription|strip_unsafe_html|nl2br}
+			{$issue->getLocalizedDescription()|strip_unsafe_html|nl2br}
 		</div>
 	</div>
 </div><!-- .issue-summary -->
