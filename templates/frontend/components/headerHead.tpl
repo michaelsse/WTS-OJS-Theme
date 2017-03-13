@@ -22,7 +22,6 @@
 
         {load_header context="frontend" headers=$headers}
 
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" integrity="sha384-8+rznmq/k0KZkJlZhnuPEVkbRD7tA0wcFEjY48dajGWn3Xc1MasJwS8/tJ7OEsKW" crossorigin="anonymous" media="screen" />
         {include file="frontend/components/WTShtmlcss.tpl"}
         {load_stylesheet context="frontend" stylesheets=$stylesheets}
 

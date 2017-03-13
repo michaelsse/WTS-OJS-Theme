@@ -1,0 +1,159 @@
+/*
+ * Westernsem.less
+ * less file for PKP CMS template
+*/
+
+body {
+    font-family: "Open Sans","HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+body.undernavigation {
+     padding-top: 0;
+}
+
+header [role="global"], nav ul.navbar-nav > a {
+     background-color: #041216 !important;
+}
+
+header.navbar-inverse, nav ul.navbar-nav a {
+     background-image: none;
+}
+
+header[role="global"] {
+     h1.logo {
+     margin: inherit;
+     float:left;
+     }
+     nav.primary {
+     margin-top: inherit;
+     }
+     .primary ul li.calling, .primary ul li.academics, .primary ul li.admissions {
+     float: right;
+     }
+     .secondary {
+          border-bottom: none;
+          background: #222222 none repeat scroll 0 0;
+          max-width: 100%;
+          width: 9999px;
+          padding: 0 30px;
+     }
+     .navbar-default {
+          border-top: none;
+          background-color: inherit;
+          border: 0 none;
+     }
+     #wts-menu, #wts-menu .navbar {
+          background: inherit !important;
+          border-bottom: medium none;
+     }
+          .secondary.navbar {
+          min-height: 0;
+     }
+     .row ul > li.email a, .row ul > li.phone_info a {
+          border-left: 1px solid #009bc7;
+          padding: 0 5px !important;
+     }
+}
+
+#wts-menu {
+     display:inline-flex;
+     margin: -50px 0 0 0;
+     width: 100%;
+     @media (max-width: 1079px) {
+          > div.navbar-default[role="navigation"] {
+               margin: -.7em auto .5em;
+          }
+     }
+}
+
+figure.thumbnail {
+     margin: 0 auto;
+}
+
+.thumbnail > img {
+     margin: 0 auto;
+}
+
+.mobile-menu {
+     top: 15px !important;
+     right: 10px !important;
+     left: inherit !important;
+     z-index: 9 !important;
+     @media (max-width: 1079px) {
+          display: block !important;
+          i.el-icon-lines {
+               position: relative !important;
+               top: 20px !important;
+          }
+     }
+     @media (max-width: 1080px) {
+          display: none;
+     }
+}
+
+/*.logo {
+     float: left;
+}*/
+
+.simple-item-view-authors div {
+     margin-left: 1.25em;
+     text-indent: -1.25em;
+}
+
+form.navbar-form {
+     input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+          margin: 0;
+          height: unset;
+          font-size: unset;
+     }
+}
+
+footer.navbar {
+     margin-bottom: 0;
+}
+
+footer[role="global"] {
+          .contact hr {
+          float:none;
+          display:block;
+     }
+}
+
+div.panel-body form, td form {
+     margin: 0;
+}
+
+.container {
+     ul > li.databases a, ul > li.hopecat a, ul > li.journals a {
+          border-left: 1px solid #009bc7;
+          padding: 0 5px !important;
+     }
+}
+
+.pkp_block.block_custom .panel {
+    margin: 0 !important;
+    border: unset;
+    padding: .33em;
+}
+
+button.disabled, button[disabled], .button.disabled, .button[disabled] {
+     color: inherit;
+}
+
+.file-wrapper.row {
+     margin-bottom: 1.0em;
+}
+
+.word-break {
+     word-break: normal;
+}
+
+img.lazy {
+     display: none;
+}
+
+#wts-main-menu {
+     @media (max-width: 1079px) {
+          display: none;
+     }
+}

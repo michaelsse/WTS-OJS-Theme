@@ -4,12 +4,12 @@
       <ul>
         <li class="mobile-menu">
           <a id="mobile-menu" href="#sidr">
-            <i class="el-icon-lines"></i>
+            <i class="fa fa-bars"></i>
             <span class="sr-only">Mobile Menu</span>
           </a>
         </li>
         <li class="student_portal address">
-          <a id="manual-google-map-reveal" href="#" data-reveal-id="google-map-modal">101 E 13th St Holland, MI 49423
+          <a id="manual-google-map-reveal" class="map" href="#" data-reveal-id="google-map-modal">101 E 13th St Holland, MI 49423
           </a>
         </li>
         <li class="student_portal phone_info">
@@ -31,8 +31,6 @@
     <div role="navigation" class="navbar">
       <h1 class="logo navbar-header container-fluid">
         <a href="http://www.westernsem.edu/">
-          <img width="300" height="100" data-original="/themes/2014_Website_Theme/images/header/logo.png" class="lazy" alt="Western Theological Seminary">
-          <noscript><img width="300" height="100" src="/themes/2014_Website_Theme/images/header/logo.png" alt="Western Theological Seminary"></noscript>
           <span class="sr-only">Western Theological Seminary</span>
         </a>
       </h1>

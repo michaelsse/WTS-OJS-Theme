@@ -153,7 +153,7 @@
 
 					{* Search form *}
 					{if !$noContextsConfigured}
-						<div class="pull-md-right">
+						<div class="pull-right">
 							{include file="frontend/components/searchForm_simple.tpl"}
 						</div>
 					{/if}

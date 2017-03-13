@@ -1,4 +1,4 @@
-<div id="pkp-scroll-top" title="Back to Top">
+<div id="pkp-scroll-top" title="Back to Top" aria-hidden="true">
     <span class="fa-stack fa-lg">
       <i class="fa fa-square-o fa-stack-2x"></i>
       <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
@@ -65,7 +65,9 @@
 
       <div class="address">
         <div class="vcard" itemtype="https://schema.org/EducationalOrganization" itemscope="itemscope">
-          <a data-reveal-id="google-map-modal" target="_blank" class="map" href="https://www.google.com/maps/place/Western+Theological+Seminary/@42.786267,-86.103265,17z/data=!4m6!1m3!3m2!1s0x8819f2a519290a71:0xb3328d95e7bfb43c!2sWestern+Theological+Seminary!3m1!1s0x8819f2a519290a71:0xb3328d95e7bfb43c">Map </a>
+          <div>
+              <a data-reveal-id="google-map-modal" target="_blank" class="map" href="https://www.google.com/maps/place/Western+Theological+Seminary/@42.786267,-86.103265,17z/data=!4m6!1m3!3m2!1s0x8819f2a519290a71:0xb3328d95e7bfb43c!2sWestern+Theological+Seminary!3m1!1s0x8819f2a519290a71:0xb3328d95e7bfb43c">Map </a>
+          </div>
 	  <span itemprop="department" class="fn">Bearslee Library</span>
           <a itemprop="name" class="url fn org" href="http://www.westernsem.edu">Western Theological Seminary</a>
           <div itemtype="https://schema.org/PostalAddress" itemscope="itemscope" itemprop="address" class="adr">
@@ -107,8 +109,6 @@ function gaOptout() {
   </div>
 </footer>
 
-  <div id="google-map-modal" class="reveal-modal" data-reveal="">
-    <iframe style="border:0;height:75vh;" frameborder="0" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyATKAED7kmXZcAPAUyofKVB5FYU9s6EEEQ&center=42.7862,-86.1026&zoom=18&q=Beardslee%20Library"></iframe>
-  </div>
+  <div id="google-map-modal" class="reveal-modal" data-reveal=""></div>
 
 {include file="frontend/components/WTSmodal-reveal.tpl"}

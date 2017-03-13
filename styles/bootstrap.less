@@ -10,11 +10,104 @@
  *
  */
 
+@import "./wts.less";
 @import "../bootstrap/less/bootstrap.less";
+@import "../bootstrap/less/font-awesome-4.7.0/less/font-awesome.less";
+@import "./westernsem.less";
 
 // Collapse margins on the site name in the header
 .navbar-header .site-name {
     margin: 0;
+}
+
+// Registration Buttons
+div.buttons {
+    margin: 1em 0;
+}
+
+// Galley Link Buttons
+.btn-group {
+    a.btn[role="button file"] {
+        &::before {
+            content: "\f0f6"" ";
+            font-family: FontAwesome;
+            color: #00C;
+            font-size: 1.2em;
+        }
+    }
+    a.btn[role="button pdf"] {
+        &::before {
+            content: "\f1c1"" ";
+            font-family: FontAwesome;
+            color: #C03;
+            font-size: 1.2em;
+        }
+    }
+}
+
+.download {
+    a.btn[role="button file"] {
+        &::before {
+            content: "\f0f6"" ";
+            font-family: FontAwesome;
+            font-size: 1.2em;
+        }
+    }
+    a.btn[role="button pdf"] {
+        &::before {
+            content: "\f1c1"" ";
+            font-family: FontAwesome;
+            font-size: 1.2em;
+        }
+    }
+}
+
+// Galley Full-page -- Return to Issue/Article Summary
+a.return {
+    &::before {
+        content: "\e132";
+        font-family: 'Glyphicons Halflings';
+        font-size: 1.6em;
+        vertical-align: middle;
+    }
+}
+
+.pkp_screen_reader {
+    display: none;
+}
+
+.pkp_block.block_custom {
+    .panel {
+        margin: .5em;
+        border: unset;
+    }
+}
+
+header.header_view {
+    background-color: #002b5c;
+    color: #fff;
+}
+
+header.header_view a {
+    color: #fff;
+}
+
+#pdfCanvasContainer iframe {
+    height: 96vh;
+}
+
+// Issue Summary PDF view -- Hide for Mobile
+div.pdfView {
+    @media screen and (max-width: 800px) {
+        iframe {
+            display: none;
+        }
+    }
+}
+
+// Line between issue summaries
+.issue-summary.media {
+        border-bottom: 1px solid #ccc;
 }
 
 // Resize the logo in the header
@@ -52,6 +145,26 @@
     margin-top: 2em;
     margin-bottom: 2em;
 }
+
+#pkp-scroll-top {
+    position: fixed;
+    bottom: 50%;
+    right: 5px;
+    text-decoration: none;
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.btn.btn-primary.read-more,.btn.galley-link {
+    margin: 1em 0;
+}
+
+.article-more-details {
+    .panel-default {
+        padding: 0;
+        }
+    }
 
 .article-details {
 
@@ -144,6 +257,12 @@ h6.media-heading {
             &:extend(.panel > .list-group .list-group-item);
         }
     }
+
+    .block_custom {
+        div.panel {
+            margin-bottom: 0;
+        }
+    }
 }
 
 // Apply .btn styles to makeSubmission block plugin
@@ -161,3 +280,4 @@ footer[role="contentinfo"] {
     padding: 2em;
     margin-top: 4em;
 }
+

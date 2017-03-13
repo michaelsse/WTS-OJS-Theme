@@ -101,7 +101,7 @@
                 <div class="pdfView">
                         {foreach from=$issueGalleys item=galley}
                         {if $galley->isPdfGalley()}
-                        <iframe src="{$baseUrl}/plugins/generic/pdfJsViewer/pdf.js/web/viewer.html?file={url page="issue" op="download" path=$issue->getId()|to_array:$galley->getBestGalleyId()|escape:"url"}" width="100%" height="100%" style="min-height: 500px;" allowfullscreen webkitallowfullscreen></iframe>
+                        <iframe src="{$baseUrl}/plugins/generic/pdfJsViewer/pdf.js/web/viewer.html?file={url page="issue" op="download" path=$issue->getId()|to_array:$galley->getBestGalleyId()|escape:"url"}" width="100%" height="100%" style="min-height: 100vh;" allowfullscreen webkitallowfullscreen></iframe>
                         {/if}
                         {/foreach}
                 </div>
