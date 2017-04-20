@@ -1,3 +1,10 @@
+<script src="//cdn.jsdelivr.net/modernizr/2.7.2/modernizr.min.js" integrity="sha384-D0jzabEAsNXxjlAQm06FTcSbcnYMdUX8Gy7mt6x7SZhVqJtSu194MuOMknuAsOKk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/foundation/5.5.3/js/foundation.min.js" integrity="sha384-Vr0O1PXVIpiNhvf0rQWG80bvS0sVxKmbg641JhaRKHBilEfCfh2FaB+bQl4lwcW1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/foundation/5.5.3/js/foundation/foundation.reveal.js" integrity="sha384-Cx1H87gudQ0ZNvS1hGfeMzJRvrGnpWyYzxdX5YsSIYbhnIwYNDN0Q+XJm+ab78GG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/foundation/5.5.3/js/foundation/foundation.dropdown.js" integrity="sha384-FN439jGz6JeL3uLDimq19QiCE0ncK/67m315JPZ34LRI6URLR0kDxZH9dUwjq7C3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/masonry/4.1.1/masonry.pkgd.min.js" integrity="sha384-OmgZyOluvq2PG/P5ZUbhdV6cFdrgbayjpFDpZbZUTP5OMdK+HPYDS/MX5lffz2Rv" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js" integrity="sha384-63ZAEeAoTgGnNelLgKqfxvJHMH2oUFeheBUKL0q4j2yliHpmdSHbQ1YmiYgUcF49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/jquery.sidr/1.2.1/jquery.sidr.js" integrity="sha384-TYonOjsmmL2Nnkci4cYBNhPzT3OfoCu2fhxPXTjmFZQdr0s424vRR4S5suVkKC0/" crossorigin="anonymous"></script>
 <script type="text/javascript">
 {literal}
 $(document).ready(function() {
@@ -56,15 +63,4 @@ $('a.map').click(function(){
 });
 {/literal}
 </script> 
-{* <script src="/themes/node_modules/foundation/js/foundation/foundation.js"></script>
-<script src="/themes/node_modules/foundation/js/foundation/foundation.reveal.js"></script> *}
-<script src="https://cdn.jsdelivr.net/foundation/4.2.2/js/foundation.min.js" integrity="sha384-gzxUWk7ESMVtCjGCtv0klr8GprVkUDEml7wSOiSUqsIsR9B81Il7vJ2oHrnzyL9q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/foundation/4.2.2/js/foundation/foundation.reveal.js" integrity="sha384-SC0gbKLN26Aj4iaNKvMbqrnOoU0MMVoUXDFbRexvt1A33KVEb2ViBYymkUhrRjV/" crossorigin="anonymous"></script>
-{* <script src="/themes/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
-<script src="/themes/node_modules/jquery-lazyload/jquery.lazyload.js"></script> 
-<script src="/themes/2014_Website_Theme/js/modernizr.js"></script> *}
-<script src="https://cdn.jsdelivr.net/masonry/4.1.1/masonry.pkgd.min.js" integrity="sha384-OmgZyOluvq2PG/P5ZUbhdV6cFdrgbayjpFDpZbZUTP5OMdK+HPYDS/MX5lffz2Rv" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js" integrity="sha384-63ZAEeAoTgGnNelLgKqfxvJHMH2oUFeheBUKL0q4j2yliHpmdSHbQ1YmiYgUcF49" crossorigin="anonymous"></script>
-<script src="//cdn.jsdelivr.net/modernizr/2.7.2/modernizr.min.js" integrity="sha384-D0jzabEAsNXxjlAQm06FTcSbcnYMdUX8Gy7mt6x7SZhVqJtSu194MuOMknuAsOKk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/jquery.sidr/1.2.1/jquery.sidr.js" integrity="sha384-TYonOjsmmL2Nnkci4cYBNhPzT3OfoCu2fhxPXTjmFZQdr0s424vRR4S5suVkKC0/" crossorigin="anonymous"></script>
-{* <script src="/themes/2014_Website_Theme/js/sidr-package-1.2.1/dist/jquery.sidr.js"></script> *} 
+

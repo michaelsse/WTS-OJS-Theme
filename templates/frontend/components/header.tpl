@@ -11,7 +11,6 @@
  *       represents a page-level override, and doesn't indicate whether or not
  *       sidebars have been configured for thesite.
  *}
-
 {* Determine whether a logo or title string is being displayed *}
 {assign var="showingLogo" value=true}
 {if $displayPageHeaderTitle && !$displayPageHeaderLogo && is_string($displayPageHeaderTitle)}

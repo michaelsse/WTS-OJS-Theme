@@ -55,6 +55,12 @@ header[role="global"] {
      }
 }
 
+header[role="banner"] {
+     .navbar-brand, navbar-nav {
+               color: #555;
+     }
+}
+
 #wts-menu {
      display:inline-flex;
      margin: -50px 0 0 0;
@@ -64,6 +70,10 @@ header[role="global"] {
                margin: -.7em auto .5em;
           }
      }
+}
+
+.row {
+     max-width: unset;
 }
 
 figure.thumbnail {
@@ -153,7 +163,27 @@ img.lazy {
 }
 
 #wts-main-menu {
-     @media (max-width: 1079px) {
-          display: none;
-     }
+    ul li {
+      background-color: #041216;
+      color: #f9f9f9;
+      line-height: 1.5em;
+    }
+    @media (max-width: 1079px) {
+         display: none;
+    }
 }
+
+.f-dropdown li {
+  padding: unset !important;
+  &:hover {
+    background-color: #f9f9f9 !important;
+    a {
+    color: #000 !important;
+    }
+  }
+  a {
+    padding: 8px 15px !important;
+  }
+}
+
+
