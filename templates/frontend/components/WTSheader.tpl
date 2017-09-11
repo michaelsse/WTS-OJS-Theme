@@ -94,6 +94,9 @@
 <a href="http://www.westernsem.edu/community/happenings/">Happenings</a>
 </li>
 <li>
+<a href="https://www.westernsem.edu/title-ix-resources/">Non-Discrimination and Non-Harassment Resources</a>
+</li>
+<li>
 <a href="http://www.westernsem.edu/community/bookstore/">Bookstore</a>
 </li>
 </ul>

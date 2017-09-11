@@ -22,8 +22,7 @@
           <li class="find_your_degree"><a href="http://www.westernsem.edu/admissions/degrees/">Find your degree</a></li>
           <li class="meet_our_faculty"><a href="http://www.westernsem.edu/about/meet-our-faculty/">Meet our faculty</a></li>
           <li class="contact_us"><a href="http://www.westernsem.edu/contact">Contact Us</a></li>
-          <li class="explore_holland"><a href="http://holland.org/">Explore Holland</a></li>
-          <li class="sitemap"><a href="http://www.westernsem.edu/sitemap/">Sitemap</a></li>
+          <li class="explore_holland"><a target="_blank" href="http://holland.org/">Explore Holland</a></li>
         </ul>
       </div>
 
@@ -45,6 +44,9 @@
           <li class="course_schedule"><a href="http://www.westernsem.edu/academics/courses/">Course Schedules</a></li>
           <li class="calendar"><a href="http://www.westernsem.edu/academics/registrar/">Calendar</a></li>
           <li class="services"><a href="http://www.westernsem.edu/academics/student-services/">Student Services</a></li>
+          <li><a href="http://guides.westernsem.edu" target="_blank">Library</a></li>
+          <li><a href="https://www.westernsem.edu/title-ix-resources/">Title IX Resources</a></li>
+          <li class="privacy_policy"><a href="https://www.westernsem.edu/privacy-policy/">Privacy Policy</a></li>
         </ul>
       </div>
     </nav>
@@ -80,9 +82,6 @@
       </div>
     </div>
     <div class="contact" style="margin:0 25px;font-size:13px;text-align:center;">
-      <div>
-        <p><a rel="privacy-policy" href="http://www.westernsem.edu/privacy-policy">Privacy policy</a></p>
-      </div>
       <div>
         <p><a href="javascript:gaOptout()">Opt-out of statistical data-gathering</a></p>
 <script>{literal}
