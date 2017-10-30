@@ -11,6 +11,15 @@ Based on Bootstrap3 for OJS 3.0: A community-built theme for OJS 3.0 that implem
 
 You can now see the Bootstrap 3 theme on your website. Go back to the Settings > Website > Appearance page (or refresh the page if it is still open) to view options to switch to any of the bundled Bootstrap 3 themes.
 
+## Version Compatibility
+
+Some versions of the Bootstrap3 theme are only compatible with certain releases of OJS. This release list indicates which versions are compatible.
+
+* **Bootstrap3 v1.1** is compatible with OJS 3.1.
+* **Bootstrap3 v1.0.2** is compatible with OJS 3.0.2.
+* **Bootstrap3 v1.0.1** is compatible with OJS 3.0.1.
+* **Bootstrap3 v1.0.0** is compatible with OJS 3.0.0.
+
 ## Project Aims
 
 This project was born at the [2016 PKP Sprint](https://pkp.sfu.ca/2016/04/29/sprinting-in-montreal/) in Montreal. It aims to provide a common starting point for anyone who wants to build a custom theme for OJS 3.0.

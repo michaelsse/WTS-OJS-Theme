@@ -1,8 +1,8 @@
 {**
  * templates/frontend/pages/search.tpl
  *
- * Copyright (c) 2014-2016 Simon Fraser University Library
- * Copyright (c) 2003-2016 John Willinsky
+ * Copyright (c) 2014-2017 Simon Fraser University Library
+ * Copyright (c) 2003-2017 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @brief Display the page to search and view search results.
@@ -78,7 +78,7 @@
 						<input class="form-control" type="text" for="authors" name="authors" value="{$authors}">
 					</div>
 				</div>
-
+ 
                                 <div class="col-md-6">
                                         <div class="form-group">
                                                 <label for="subjects">
@@ -96,14 +96,14 @@
 				{translate key="search.searchResults"}
 			</h2>
 			{iterate from=results item=result}
-				{include file="frontend/objects/article_summary.tpl" article=$result.publishedArticle showDatePublished=true}
+				{include file="frontend/objects/article_summary.tpl" article=$result.publishedArticle showDatePublished=true hideGalleys=true}
 			{/iterate}
 		</div>
 
 		{* No results found *}
 		{if $results->wasEmpty()}
 			{if $error}
-				{include file="frontend/components/notification.tpl" type="error" message=$error|escape}
+ 				{include file="frontend/components/notification.tpl" type="error" message=$error|escape}
 			{else}
 				{include file="frontend/components/notification.tpl" type="notice" messageKey="search.noResults"}
 			{/if}

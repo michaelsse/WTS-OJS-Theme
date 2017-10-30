@@ -1,8 +1,8 @@
 {**
  * templates/frontend/objects/article_details.tpl
  *
- * Copyright (c) 2014-2016 Simon Fraser University Library
- * Copyright (c) 2003-2016 John Willinsky
+ * Copyright (c) 2014-2017 Simon Fraser University Library
+ * Copyright (c) 2003-2017 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @brief View of an Article which displays all details about the article.
@@ -32,29 +32,34 @@
 		<section class="article-sidebar col-md-4">
 
 			{* Screen-reader heading for easier navigation jumps *}
-			<h2 class="sr-only">{translate key="plugins.themes.westernsem.article.sidebar"}</h2>
+			<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.sidebar"}</h2>
 
 			{* Article/Issue cover image *}
 			{if $article->getLocalizedCoverImage() || $issue->getLocalizedCoverImage()}
 				<div class="cover-image">
 					{if $article->getLocalizedCoverImage()}
-						<img class="img-responsive lazy" data-original="{$publicFilesDir}/{$article->getLocalizedCoverImage()|escape}"{if $article->getLocalizedCoverImageAltText()} alt="{$article->getLocalizedCoverImageAltText()|escape}"{/if}>
-						<noscript><img class="img-responsive" src="{$publicFilesDir}/{$article->getLocalizedCoverImage()|escape}"{if $article->getLocalizedCoverImageAltText()} alt="{$article->getLocalizedCoverImageAltText()|escape}"{/if}></noscript>
+						<img class="img-responsive" src="{$article->getLocalizedCoverImageUrl()|escape}"{if $article->getLocalizedCoverImageAltText()} alt="{$article->getLocalizedCoverImageAltText()|escape}"{/if}>
 					{else}
 						<a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
-							<img class="img-responsive lazy" data-original="{$publicFilesDir}/{$issue->getLocalizedCoverImage()|escape}"{if $issue->getCoverImageAltText()} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
-							<noscript><img class="img-responsive" src="{$publicFilesDir}/{$issue->getLocalizedCoverImage()|escape}"{if $issue->getCoverImageAltText()} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}></noscript>
+							<img class="img-responsive" src="{$issue->getLocalizedCoverImageUrl()|escape}"{if $issue->getLocalizedCoverImageAltText()} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
 						</a>
 					{/if}
 				</div>
 			{/if}
 
 			{* Article Galleys *}
-			{if $article->getGalleys()}
+			{if $primaryGalleys || $supplementaryGalleys}
 				<div class="download">
-					{foreach from=$article->getGalleys() item=galley}
-						{include file="frontend/objects/galley_link.tpl" parent=$article}
-					{/foreach}
+					{if $primaryGalleys}
+						{foreach from=$primaryGalleys item=galley}
+							{include file="frontend/objects/galley_link.tpl" parent=$article purchaseFee=$currentJournal->getSetting('purchaseArticleFee') purchaseCurrency=$currentJournal->getSetting('currency')}
+						{/foreach}
+					{/if}
+					{if $supplementaryGalleys}
+						{foreach from=$supplementaryGalleys item=galley}
+							{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+						{/foreach}
+					{/if}
 				</div>
 			{/if}
 
@@ -96,12 +101,11 @@
 			<section class="article-main">
 
 				{* Screen-reader heading for easier navigation jumps *}
-				<h2 class="sr-only">{translate key="plugins.themes.westernsem.article.main"}</h2>
+				<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.main"}</h2>
 
 				{if $article->getAuthors()}
 					<div class="authors">
 						{foreach from=$article->getAuthors() item=author}
-                                                    {if $article->getAuthorString() && $article->getAuthorString() != $currentJournal->getLocalizedName()}
 							<strong>{$author->getFullName()|escape}</strong>
 							{if $author->getLocalizedAffiliation()}
 								<div class="article-author-affilitation">
@@ -110,13 +114,12 @@
 							{/if}
 							{if $author->getOrcid()}
 								<span class="orcid">
+									{$orcidIcon}
 									<a href="{$author->getOrcid()|escape}" target="_blank">
-										<img src="//orcid.org/sites/default/files/images/orcid_16x16.png">
 										{$author->getOrcid()|escape}
 									</a>
 								</span>
 							{/if}
-                                                    {/if}
 						{/foreach}
 					</div>
 				{/if}
@@ -140,35 +143,38 @@
 
 			<section class="article-more-details">
 
- 				{* Altmetrics  *}
-					<div data-badge-details="right" data-badge-type="medium-donut" data-uri="{url page="article" op="view" path=$article->getBestArticleId()}" data-hide-no-mentions="true" class="altmetric-embed">
-					</div>
-
 				{* Screen-reader heading for easier navigation jumps *}
-				<h2 class="sr-only">{translate key="plugins.themes.westernsem.article.details"}</h2>
+				<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.details"}</h2>
 
-				{* Citation formats *}
-				{if $citationPlugins|@count}
-					<div class="panel panel-default citation_formats">
+				{* How to cite *}
+				{if $citation}
+					<div class="panel panel-default how-to-cite">
 						<div class="panel-heading">
 							{translate key="submission.howToCite"}
 						</div>
 						<div class="panel-body">
-
-							{* Output the first citation format *}
-							{foreach from=$citationPlugins name="citationPlugins" item="citationPlugin"}
-								<div id="citationOutput" class="citation_output">
-									{$citationPlugin->fetchCitation($article, $issue, $currentContext)}
-								</div>
-								{php}break;{/php}
-							{/foreach}
-
-							{* Output list of all citation formats *}
-							<div class="list-group citation_format_options">
-								{foreach from=$citationPlugins name="citationPlugins" item="citationPlugin"}
-									{capture assign="citationUrl"}{url page="article" op="cite" path=$article->getBestArticleId()}/{$citationPlugin->getName()|escape}{/capture}
-									<a class="list-group-item {$citationPlugin->getName()|escape}" href="{$citationUrl}"{if !$citationPlugin->isDownloadable()} data-load-citation="true"{/if} target="_blank">{$citationPlugin->getCitationFormatName()|escape}</a>
-								{/foreach}
+							<div id="citationOutput" role="region" aria-live="polite">
+								{$citation}
+							</div>
+							<div class="btn-group">
+							  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-controls="cslCitationFormats">
+							    {translate key="submission.howToCite.citationFormats"}
+									<span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" role="menu">
+									{foreach from=$citationStyles item="citationStyle"}
+										<li>
+											<a
+												aria-controls="citationOutput"
+												href="{url page="citationstylelanguage" op="get" path=$citationStyle.id params=$citationArgs}"
+												data-load-citation
+												data-json-href="{url page="citationstylelanguage" op="get" path=$citationStyle.id params=$citationArgsJson}"
+											>
+												{$citationStyle.title|escape}
+											</a>
+										</li>
+									{/foreach}
+							  </ul>
 							</div>
 						</div>
 					</div>
@@ -202,23 +208,6 @@
 					{/if}
 				{/foreach}
 
-                                {* Article Authors *}
-                                {if $article->getAuthorString() && $article->getAuthorString() != $currentJournal->getLocalizedName()}
-                                <div class="panel panel-default author">
-                                        <div class="panel-heading">
-                                                {translate key="article.authors"}
-                                        </div>
-                                        <div class="panel-body">
-                                                {foreach from=$article->getAuthors() key=i item=link_author}
-                                                        {if $link_author != $currentJournal->getLocalizedName()}
-                                                                <p><a href="{url page="search" op="search"}?authors={$link_author->getFirstName()|escape|urlencode}{if $link_author->getMiddleName()}+{$link_author->getMiddleName()|escape|urlencode}{/if}+{$link_author->getLastName()|escape|urlencode}">{$link_author->getFirstName()|escape|urlencode}{if $link_author->getMiddleName()} {$link_author->getMiddleName()|escape|urlencode}{/if} {$link_author->getLastName()|escape}</a></p>
-                                                        {/if}
-                                                {/foreach}
-
-                                        </div>
-                                </div>
-                                {/if}
-
 				{* Article Subject *}
 				{if $article->getLocalizedSubject()}
 					<div class="panel panel-default subject">
@@ -226,14 +215,13 @@
 							{translate key="article.subject"}
 						</div>
 						<div class="panel-body">
-                                                        {if $article->getLocalizedSubject()}{foreach from=$article->getLocalizedSubject() key=metaLocale item=metaValue}
+							{$article->getLocalizedSubject()|escape}
         {foreach from=$metaValue|explode:"; " item=scSubject}
                 {if $scSubject}
                         <p><a href="{url page="search" op="search"}?subject={$scSubject|escape|urlencode}">{$scSubject}</a></p>
                 {/if}
         {/foreach}
 {/foreach}{/if}
-							
 						</div>
 					</div>
 				{/if}
@@ -261,11 +249,9 @@
 						</div>
 					</div>
 				{/if}
-
 				{include file="frontend/components/findingReferences.tpl"}
 
                                 {include file="frontend/components/metadata.tpl"}
-
 				{* Licensing info *}
 				{if $copyright || $licenseUrl}
 					<div class="panel panel-default copyright">
@@ -288,7 +274,56 @@
 					</div>
 				{/if}
 
+				{* Author biographies *}
+				{assign var="hasBiographies" value=0}
+				{foreach from=$article->getAuthors() item=author}
+					{if $author->getLocalizedBiography()}
+						{assign var="hasBiographies" value=$hasBiographies+1}
+					{/if}
+				{/foreach}
+				{if $hasBiographies}
+					<div class="panel panel-default author-bios">
+						<div class="panel-heading">
+							{if $hasBiographies > 1}
+								{translate key="submission.authorBiographies"}
+							{else}
+								{translate key="submission.authorBiography"}
+							{/if}
+						</div>
+						<div class="panel-body">
+							{foreach from=$article->getAuthors() item=author}
+								{if $author->getLocalizedBiography()}
+									<div class="media biography">
+										<div class="media-body">
+											<h3 class="media-heading biography-author">
+												{if $author->getLocalizedAffiliation()}
+													{capture assign="authorName"}{$author->getFullName()|escape}{/capture}
+													{capture assign="authorAffiliation"}<span class="affiliation">{$author->getLocalizedAffiliation()|escape}</span>{/capture}
+													{translate key="submission.authorWithAffiliation" name=$authorName affiliation=$authorAffiliation}
+												{else}
+													{$author->getFullName()|escape}
+												{/if}
+											</h3>
+											{$author->getLocalizedBiography()|strip_unsafe_html}
+										</div>
+									</div>
+								{/if}
+							{/foreach}
+						</div>
+					</div>
+				{/if}
+
 				{call_hook name="Templates::Article::Details"}
+
+				{* References *}
+				{if $article->getCitations()}
+					<div class="article-references">
+						<h2>{translate key="submission.citations"}</h2>
+						<div class="article-references-content">
+							{$article->getCitations()|nl2br}
+						</div>
+					</div>
+				{/if}
 
 			</section><!-- .article-details -->
 		</div><!-- .col-md-8 -->

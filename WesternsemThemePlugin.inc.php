@@ -52,11 +52,15 @@ class WesternsemThemePlugin extends ThemePlugin {
 
 		$locale = AppLocale::getLocale();
 		if (AppLocale::getLocaleDirection($locale) === 'rtl') {
-			$this->addStyle('bootstrap-rtl', 'bootstrap-rtl/dist/css/bootstrap-rtl.min.css');
+			if (Config::getVar('general', 'enable_cdn')) {
+				$this->addStyle('bootstrap-rtl', '//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css', array('baseUrl' => ''));
+			} else {
+				$this->addStyle('bootstrap-rtl', 'styles/bootstrap-rtl.min.css');
+			}
 		}
 
 		$bootstrapTheme = $this->getOption('bootstrapTheme');
-		if (!empty($bootstrapTheme)) {
+		if (!empty($bootstrapTheme) && $bootstrapTheme !== 'bootstrap3') {
 			$this->addStyle('bootstrapTheme-' . $bootstrapTheme, 'styles/' . $bootstrapTheme . '.less');
 		}
 
@@ -64,8 +68,8 @@ class WesternsemThemePlugin extends ThemePlugin {
 		$min = Config::getVar('general', 'enable_minified') ? '.min' : '';
 		$request = Application::getRequest();
 		if (Config::getVar('general', 'enable_cdn')) {
-			$jquery = '//cdn.jsdelivr.net/jquery/' . CDN_JQUERY_VERSION . '/jquery' . $min . '.js';
-			$jqueryUI = '//cdn.jsdelivr.net/jquery.ui/' . CDN_JQUERY_UI_VERSION . '/jquery-ui' . $min . '.js';
+			$jquery = '//ajax.googleapis.com/ajax/libs/jquery/' . CDN_JQUERY_VERSION . '/jquery' . $min . '.js';
+			$jqueryUI = '//ajax.googleapis.com/ajax/libs/jqueryui/' . CDN_JQUERY_UI_VERSION . '/jquery-ui' . $min . '.js';
 		} else {
 			// Use OJS's built-in jQuery files
 			$jquery = $request->getBaseUrl() . '/lib/pkp/lib/vendor/components/jquery/jquery' . $min . '.js';
@@ -77,8 +81,11 @@ class WesternsemThemePlugin extends ThemePlugin {
 		$this->addScript('jQueryUI', $jqueryUI, array('baseUrl' => ''));
 		$this->addScript('jQueryTagIt', $request->getBaseUrl() . '/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js', array('baseUrl' => ''));
 
-		// Load Boostrap
+		// Load Bootstrap
 		$this->addScript('bootstrap', 'bootstrap/js/bootstrap.min.js');
+
+		// Add navigation menu areas for this theme
+		$this->addMenuArea(array('primary', 'user'));
 	}
 
 	/**
